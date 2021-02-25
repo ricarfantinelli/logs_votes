@@ -76,7 +76,7 @@ def index():
 
     if request.method == 'GET':
 
-        # Get current values
+        # Get current values 
         vote1 = r.get(button1).decode('utf-8')
         tracer.span(name="Blue jeans added to Cart")
         vote2 = r.get(button2).decode('utf-8')
@@ -113,5 +113,5 @@ def index():
             return render_template("index.html", value1=int(vote1), value2=int(vote2), button1=button1, button2=button2, title=title)
 
 if __name__ == "__main__":
-    app.run() # local
-    # app.run(host='0.0.0.0', threaded=True, debug=True) # remote
+    #app.run() # local
+    app.run(host='0.0.0.0', threaded=True, debug=True) # remote
